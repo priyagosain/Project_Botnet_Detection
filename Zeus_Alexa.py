@@ -56,7 +56,7 @@ def graph(clf):
     y_graph.render("Zeus_Alexa_Decision_Rules_Graph")
     return y_graph
 
-# The driver code
+# The driver code for all the functions
 def main():
     # Building Phase
     data = import_data()
