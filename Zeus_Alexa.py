@@ -57,8 +57,7 @@ def graph(clf):
     return y_graph
 
 # Function to create a Pickle file that contains the Classifier Model
-# which can be used at later stages
-
+# which can be used at later stages to predict any new set of samples
 def load_model(clf):
     pkl_filename = 'classifier_model.pkl'
     # Open the file to save as pkl file
