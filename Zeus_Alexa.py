@@ -2,6 +2,7 @@
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
 
 # Function to import the Dataset
 def import_data():
@@ -23,11 +24,26 @@ def split_dataset(traffic_data):
     return x, y, x_train, x_test, y_train, y_test
 
 
+# train the model for Decision Trees
+def train_using_decision_tree(x_train, y_train):
+    # Creating the classifier object
+    clf = DecisionTreeClassifier(criterion="entropy",
+                                   random_state=100)
+    # Fitting the training model
+
+    clf.fit(x_train, y_train)
+
+    print("Classifier model:", clf)
+
+    return clf
+
+
 # The driver code
 def main():
     # Building Phase
     data = import_data()
     x, y, x_train, x_test, y_train, y_test = split_dataset(data)
+    clf = train_using_decision_tree(x_train, y_train)
 
 
 # Calling the main function
