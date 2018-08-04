@@ -29,14 +29,21 @@ def train_using_decision_tree(x_train, y_train):
     # Creating the classifier object
     clf = DecisionTreeClassifier(criterion="entropy",
                                    random_state=100)
+
     # Fitting the training model
-
     clf.fit(x_train, y_train)
-
+    # printing the classifier made
     print("Classifier model:", clf)
 
     return clf
 
+
+# function to make the predictions
+def prediction(x_test, clf_object):
+    # Predicton on test with Decision Treee
+    y_pred = clf_object.predict(x_test)
+    print(y_pred)
+    return y_pred
 
 # The driver code
 def main():
@@ -44,6 +51,7 @@ def main():
     data = import_data()
     x, y, x_train, x_test, y_train, y_test = split_dataset(data)
     clf = train_using_decision_tree(x_train, y_train)
+    y_pred = prediction(x_test, clf)
 
 
 # Calling the main function
