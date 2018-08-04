@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn import tree
 import graphviz
+import pickle
 
 # Function to import the Dataset
 def import_data():
@@ -25,8 +26,7 @@ def split_dataset(traffic_data):
 # train the model for Decision Trees
 def train_using_decision_tree(x_train, y_train):
     # Creating the classifier object
-    clf = DecisionTreeClassifier(criterion="entropy",
-                                   random_state=100)
+    clf = DecisionTreeClassifier(criterion="entropy", random_state=100)
     # Fitting the training model
     clf.fit(x_train, y_train)
     # printing the classifier made
@@ -40,7 +40,7 @@ def prediction(x_test, clf_object):
     print(y_pred)
     return y_pred
 
-# Function create decision tree graph using Graphviz for visualisation
+# Function to create decision tree graph using Graphviz for visualisation
 # There are two classes to be classified and hence the labels: Illegitimate and Legitimate
 # Feature set comprises of Duration, Total Packets, Total Bytes, Load, Rate
 def graph(clf):
@@ -56,6 +56,19 @@ def graph(clf):
     y_graph.render("Zeus_Alexa_Decision_Rules_Graph")
     return y_graph
 
+# Function to create a Pickle file that contains the Classifier Model
+# which can be used at later stages
+
+def load_model(clf):
+    pkl_filename = 'classifier_model.pkl'
+    # Open the file to save as pkl file
+    classifier_model_pkl = open(pkl_filename, 'wb')
+    pickle.dump(clf, classifier_model_pkl)
+    # Close the pickle instances
+    classifier_model_pkl.close()
+    print("Decision Tree classifier: ", clf)
+    return classifier_model_pkl
+
 # The driver code for all the functions
 def main():
     # Building Phase
@@ -64,6 +77,7 @@ def main():
     clf = train_using_decision_tree(x_train, y_train)
     y_pred = prediction(x_test, clf)
     y_graph = graph(clf)
+    classifier_model_pkl = load_model(clf)
 
 # Calling the main function
 if __name__ == "__main__":
