@@ -3,6 +3,8 @@
 # Zeus (Botnet/Illegitimate) and Alexa (Legitimate).
 # This means it is a binary classification problem.
 
+# Source : http://scikit-learn.org/stable/modules/tree.html
+
 # Import the required packages
 import pandas as pd
 from sklearn.model_selection import train_test_split
