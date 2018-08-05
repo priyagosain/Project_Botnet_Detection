@@ -48,13 +48,13 @@ def prediction(x_test, clf_object):
 
 # function to calcuate accuracy
 def cal_accuracy(y_test, y_pred):
-    print("Confusion Matrix: ",
+    print("Confusion Matrix: \n",
           confusion_matrix(y_test, y_pred))
 
-    print("Accuracy of DT (Bashlite and Mirai - 9 classes): ",
+    print("Accuracy of DT (Zeus and Alexa - 2 classes): \n ",
           accuracy_score(y_test, y_pred) * 100)
 
-    print("Report : ",
+    print("Report : \n ",
           classification_report(y_test, y_pred))
 
 # Function to create decision tree graph using Graphviz for visualisation
