@@ -12,6 +12,9 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn import tree
 import graphviz
 import pickle
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import classification_report
 
 # Function to import the Dataset
 def import_data():
@@ -42,6 +45,17 @@ def prediction(x_test, clf_object):
     # Predicton on test with Decision Treee
     y_pred = clf_object.predict(x_test)
     return y_pred
+
+# function to calcuate accuracy
+def cal_accuracy(y_test, y_pred):
+    print("Confusion Matrix: ",
+          confusion_matrix(y_test, y_pred))
+
+    print("Accuracy of DT (Bashlite and Mirai - 9 classes): ",
+          accuracy_score(y_test, y_pred) * 100)
+
+    print("Report : ",
+          classification_report(y_test, y_pred))
 
 # Function to create decision tree graph using Graphviz for visualisation
 # There are two classes to be classified and hence the labels: Illegitimate and Legitimate
@@ -78,6 +92,7 @@ def main():
     x, y, x_train, x_test, y_train, y_test = split_dataset(data)
     clf = train_using_decision_tree(x_train, y_train)
     y_pred = prediction(x_test, clf)
+    cal_accuracy(y_test, y_pred)
     y_graph = graph(clf)
     classifier_model_pkl = load_model(clf)
 
