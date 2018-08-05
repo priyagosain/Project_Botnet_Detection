@@ -1,5 +1,9 @@
-# Import the required packages
+# This python code is for a supervised learning mechanism
+# where Decision Trees are used to distinguish between the
+# Zeus (Botnet/Illegitimate) and Alexa (Legitimate).
+# This means it is a binary classification problem.
 
+# Import the required packages
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
@@ -19,8 +23,7 @@ def split_dataset(traffic_data):
     y = traffic_data.values[:, 0]
 
     # Spliting the dataset into train and test
-    x_train, x_test, y_train, y_test = train_test_split(
-        x, y, test_size=0.3, random_state=100)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=100)
     return x, y, x_train, x_test, y_train, y_test
 
 # train the model for Decision Trees
@@ -30,14 +33,12 @@ def train_using_decision_tree(x_train, y_train):
     # Fitting the training model
     clf.fit(x_train, y_train)
     # printing the classifier made
-    print("Classifier model:", clf)
     return clf
 
 # function to make the predictions
 def prediction(x_test, clf_object):
     # Predicton on test with Decision Treee
     y_pred = clf_object.predict(x_test)
-    print(y_pred)
     return y_pred
 
 # Function to create decision tree graph using Graphviz for visualisation
