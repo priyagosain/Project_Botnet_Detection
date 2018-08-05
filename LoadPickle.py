@@ -2,6 +2,7 @@ import pickle
 import pandas as pd
 import numpy as np
 
+# Import the dataset which is to be predicted
 traffic_data = pd.read_csv("1_Testing_dataset_Zeus_Alexa.csv", encoding='utf-8')
 # Printing the dataswet shape
 print("Dataset Length: ", len(traffic_data))
@@ -15,7 +16,7 @@ decision_tree_pkl_filename = 'classifier_model.pkl'
 # Loading the saved decision tree model pickle
 decision_tree_model_pkl = open(decision_tree_pkl_filename, 'rb')
 decision_tree_model = pickle.load(decision_tree_model_pkl)
-print("Loaded Decision gini format tree model :: ", decision_tree_model)
+print("Loaded Decision tree model :: ", decision_tree_model)
 
 predicted_values = decision_tree_model.predict(traffic_data)
 pred = np.savetxt('PredictedValues_zeus.csv', predicted_values, delimiter=',')
