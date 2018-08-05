@@ -40,7 +40,7 @@ def split_dataset(traffic_data):
     return x, y, x_train, x_test, y_train, y_test
 
 # train the model for Decision Trees
-def train_using_decision_tree(x_train, y_train):
+def train_using_random_forest(x_train, y_train):
     # Creating the classifier object
     clf = RandomForestClassifier(criterion="entropy", n_estimators=50, random_state=100)
     # Fitting the training model
@@ -82,7 +82,7 @@ def main():
     # Building Phase
     data = import_data()
     x, y, x_train, x_test, y_train, y_test = split_dataset(data)
-    clf = train_using_decision_tree(x_train, y_train)
+    clf = train_using_random_forest(x_train, y_train)
     y_pred = prediction(x_test, clf)
     cal_accuracy(y_test, y_pred)
     classifier_model_pkl = load_model(clf)
