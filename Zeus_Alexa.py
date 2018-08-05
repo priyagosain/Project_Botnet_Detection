@@ -20,7 +20,7 @@ def import_data():
 
 # Function to split the dataset
 def split_dataset(traffic_data):
-    # Seperating the target variable, Y = target, X = data
+    # Seperating the target variable, y = target, x = data
     x = traffic_data.values[:, 1:6]
     y = traffic_data.values[:, 0]
 
