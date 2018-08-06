@@ -1,6 +1,6 @@
-### Project_Botnet_Detection
+## Project_Botnet_Detection
 
-## Problem Statements
+Problem Statements
 
 The project deals with 2 problem statements. 
 
