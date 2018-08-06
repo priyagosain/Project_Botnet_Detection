@@ -41,6 +41,7 @@ Hence, it involves multinomial classification learning.
 
 ##Python codes
 1) Zeus_Alexa.py (in the master branch): This deals with the problem-1 discussed above. The code is used for following actions: 
+
 --To create the training model for 1_Training_Dataset_Zeus_Alexa.csv. 
 
 --The dataset is split into training and testing subsets. 
@@ -60,6 +61,7 @@ Hence, it involves multinomial classification learning.
 --PredictedValues_zeus.csv file would be generated for the provisioned dataset.
 
 2) Bashlite_Mirai.py (in the master branch): This deals with the problem-2 discussed above using Decision Trees. The code is used for following actions: 
+
 --To create the training model for 2_Training_Dataset_Bashlite_Mirai.csv. 
 
 --The dataset is split into training and testing subsets. 
@@ -78,6 +80,7 @@ Hence, it involves multinomial classification learning.
 
 
 3) LoadPickle.py (in the LoadModel branch): This deals with the problem-1 discussed above. The code is used for following actions: 
+
 -- for loading the classifier model
 
 --to predict the classes for new set of sample.
@@ -89,6 +92,7 @@ Hence, it involves multinomial classification learning.
 --Change the output file name where the predicted values are captured.
 
 4) RandomForest.py (in the master branch): This deals with the problem-2 discussed above using Random Forest Classifiers. The code is used for following actions: 
+
 --To create the training model for 2_Training_Dataset_Bashlite_Mirai.csv. 
 
 --The dataset is split into training and testing subsets. 
