@@ -66,16 +66,25 @@ Hence, it involves multinomial classification learning.
 
 3) LoadPickle.py (in the LoadModel branch): This deals with the problem-1 discussed above. The code is used for following actions: 
 -- for loading the classifier model
+
 --to predict the classes for new set of sample.
+
 --for problem-1, use classifier_model.pkl and 1_Testing_dataset_Zeus_Alexa.csv file
+
 --for problem-2, use classifier_model_2.pkl and 1_Testing_dataset_Bashlite_Mirai.csv file
+
 --Change the output file name where the predicted values are captured.
 
 4) RandomForest.py (in the master branch): This deals with the problem-2 discussed above using Random Forest Classifiers. The code is used for following actions: 
 --To create the training model for 2_Training_Dataset_Bashlite_Mirai.csv. 
+
 --The dataset is split into training and testing subsets. 
+
 --The testing subset created is used to make the predictions on the basis of the training model created.
+
 --Furthermore, accuracy score, classification report and confusion matrix are generated. 
+
 --Pickle is used to save the training model into a pickle file: classifier_model_3.pkl.
+
 
 
