@@ -18,17 +18,17 @@ Regression.
 #We have used the random forest classifier too. This file is named as RandomForest.py. This python code is for a supervised learning 
 mechanism where Random Forest Classifiers are used to distinguish between the different IoT devices that pertains to two botnets
 ( Bashlite & Mirai).
-# 9 classes are to be predicted
-# Bashlite Doorbell - Class 1
-# Mirai Doorbell - Class 2
-# Bashlite Thermostat - Class 3
-# Mirai Thermostat - Class 4
-# Bashlite Baby Monitor - Class 5
-# Mirai Baby Monitor - Class 6
-# Bashlite Security Camera - Class 7
-# Mirai Security Camera - Class 8
-# Bashlite Webcam - Class 9
-# This signifies that it is a Multinomial Classification problem.
+9 classes are to be predicted
+Bashlite Doorbell - Class 1
+Mirai Doorbell - Class 2
+Bashlite Thermostat - Class 3
+Mirai Thermostat - Class 4
+Bashlite Baby Monitor - Class 5
+Mirai Baby Monitor - Class 6
+Bashlite Security Camera - Class 7
+Mirai Security Camera - Class 8
+Bashlite Webcam - Class 9
+This signifies that it is a Multinomial Classification problem.
 #Steps
 #we loaded the dataset and performed the split function while reading the file. 
 #Then we trained the model for random forest classifier.
