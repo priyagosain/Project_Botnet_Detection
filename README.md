@@ -1,8 +1,8 @@
-###### Project_Botnet_Detection
+##### DataWarehousing-Assignment6
 
-##Project Flow
+### Project Flow
 
-##Problem Statements
+## Problem Statements
 
 The project deals with 2 problem statements. 
 
@@ -30,7 +30,7 @@ Bashlite Webcam - Class 9
 
 Hence, it involves multinomial classification learning.
 
-##Datasets
+## Datasets
 1) 1_Training_Dataset_Zeus_Alexa.csv: Dataset used for creating the training model for problem-1 (Zeus_Alexa.py). There were 2 pcap files of Zeus and Alexa which were converted into csv formats using TcpTrace tool and then were merged together to create the dataset. Feature extraction tools are used for the data pre-processing to collect the features in suitable format for training the classifier model.
 
 2) 2_Training_Dataset_Bashlite_Mirai.csv: Dataset used for creating the training model for problem-2.
@@ -39,7 +39,7 @@ Hence, it involves multinomial classification learning.
 
 4) 1_Testing_dataset_Bashlite_Mirai.csv: Dataset used to make the predictions for problem-2.
 
-##Python codes
+## Python codes
 1) Zeus_Alexa.py (in the master branch): This deals with the problem-1 discussed above. The code is used for following actions: 
 
 --To create the training model for 1_Training_Dataset_Zeus_Alexa.csv. 
