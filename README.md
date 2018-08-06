@@ -1,24 +1,11 @@
 ###### Project_Botnet_Detection
 
-####Project Flow
+##Project Flow
 
-#Dataset_Training_Dataset_Zeus_Alexa which is the first dataset we are working on was loaded. It was initially available in pcap version
-file. There were 2 pcap files of Zeus and Alexa which were conerted into csv formats using TcpTrace tool and then merged together.Feature 
-extraction tools are used for the data pre-processing to collect the features in suitable format for training the classifier model.
-
-#The file 1_LoadModel.py contains code for loading the classifier model to predict the classes for new set of sample for dataset-1, 
-use 1_Testing_dataset_Zeus_Alexa.csv and the file for dataset-2, use 1_Testing_dataset_Bashlite_Mirai.csv file.Furthur analysis were 
-done on these two datsets. The pickle file needed to chnages accoridng to the dataset in this file. The testing model was read to predict 
-the classes and the observations were printed. The save decision tree model pickle is loaded.
-
-#After this step we need to clasifiy the data. There are three clasifier model files namely classifier_model.pkl, classifier_model.pkl_1,
-classifier_model_2.pkl. This contains the different classifiers we used to train the model namely decision trees, LinearSVC and Logistic 
-Regression.
-
-#We have used the random forest classifier too. This file is named as RandomForest.py. This python code is for a supervised learning 
-mechanism where Random Forest Classifiers are used to distinguish between the different IoT devices that pertains to two botnets
-( Bashlite & Mirai).
-9 classes are to be predicted
+##Problem Statements
+The project deals with 2 problem statements. 
+Problem-1: To distinguish between the botnet (illegitimate) and legitimate dataset. We have zeus and alexa records and hence this involves binary classification learning.
+Problem-2: To distinguish between the IoT's botnet devices. Here, 9 classes are to be predicted.
 Bashlite Doorbell - Class 1
 Mirai Doorbell - Class 2
 Bashlite Thermostat - Class 3
@@ -27,31 +14,53 @@ Bashlite Baby Monitor - Class 5
 Mirai Baby Monitor - Class 6
 Bashlite Security Camera - Class 7
 Mirai Security Camera - Class 8
-Bashlite Webcam - Class 9
-This signifies that it is a Multinomial Classification problem.
-#Steps
-#we loaded the dataset and performed the split function while reading the file. 
-#Then we trained the model for random forest classifier.
-#After that the predictions were made and accuracy was calculated.
-#Then we created a Function to create a Pickle file that contains the Classifier Model which can be used at later stages to predict 
-any new set of samples namely def load_model(clf).
+Bashlite Webcam - Class 9 
+Hence, it involves multinomial classification learning.
 
-#The loaded dataset was analysed and trained. This is a binary classification problem. Zeus_Alexa. py contains the code  for a supervised 
-learning mechanism where Decision Trees areused to distinguish between the Zeus (Botnet/Illegitimate) and Alexa (Legitimate).This means 
-it is a binary classification problem.
-#Steps
-#we loaded the dataset and performed the split function while reading the file. 
-#Then we trained the model for decision tree classifier.
-#After that the predictions were made and accuracy was calculated.
-#Then we created a Function to create a Pickle file that contains the Classifier Model which can be used at later stages to predict 
-any new set of samples.
-Function  is created to make a decision tree graph using Graphviz for visualisation. There are two classes to be classified and 
-hence the labels: Illegitimate and Legitimate. Feature set comprises of Duration, Total Packets, Total Bytes, Load, Rate.
-#Another Function is created to make a Pickle file that contains the Classifier Model which can be used at later stages to predict
-any new set of samples.
+##Datasets
+1) 1_Training_Dataset_Zeus_Alexa.csv: Dataset used for creating the training model for problem-1 (Zeus_Alexa.py). There were 2 pcap files of Zeus and Alexa which were converted into csv formats using TcpTrace tool and then were merged together to create the dataset. Feature extraction tools are used for the data pre-processing to collect the features in suitable format for training the classifier model.
 
-#We used the 2_Training_Dataset_Bashlite_Mirai.csv.
+2) 2_Training_Dataset_Bashlite_Mirai.csv: Dataset used for creating the training model for problem-2.
 
-#We ploted the graph after the analysis of our second dataset. the visualization is in the file named as Zeus_Alexa_Decision_Rules_Graph.pdf.
+3) 1_Testing_dataset_Zeus_Alexa.csv: Dataset used to make the predictions for problem-1.
 
-#After that we plotted the ROC curve from the results we got after the analysis from both our datasets.
+4) 1_Testing_dataset_Bashlite_Mirai.csv: Dataset used to make the predictions for problem-2.
+
+##Python codes
+1) Zeus_Alexa.py (in the master branch): This deals with the problem-1 discussed above. The code is used for following actions: 
+--To create the training model for 1_Training_Dataset_Zeus_Alexa.csv. 
+--The dataset is split into training and testing subsets. 
+--The testing subset created is used to make the predictions on the basis of the training model created.
+--Furthermore, accuracy score, classification report and confusion matrix are generated. 
+--Digraph for the decision tree model is created (Zeus_Alexa_Decision_Rules_Graph.pdf).
+--ROC curve for the botnet class is generated too (ROC_curve.png is the output file)
+--Pickle is used to save the training model into a pickle file: classifier_model.pkl.
+--After this use LoadPickle.py.
+--PredictedValues_zeus.csv file would be generated for the provisioned dataset.
+
+2) Bashlite_Mirai.py (in the master branch): This deals with the problem-2 discussed above using Decision Trees. The code is used for following actions: 
+--To create the training model for 2_Training_Dataset_Bashlite_Mirai.csv. 
+--The dataset is split into training and testing subsets. 
+--The testing subset created is used to make the predictions on the basis of the training model created.
+--Furthermore, accuracy score, classification report and confusion matrix are generated. 
+--Digraph for the decision tree model is created (Bashlite_Mirai_Decision_Rules_Graph.pdf).
+--Pickle is used to save the training model into a pickle file: classifier_model_2.pkl.
+--After this use LoadPickle.py.
+--PredictedValues_mirai.csv file would be generated for the provisioned dataset.
+
+
+3) LoadPickle.py (in the LoadModel branch): This deals with the problem-1 discussed above. The code is used for following actions: 
+-- for loading the classifier model
+--to predict the classes for new set of sample.
+--for problem-1, use classifier_model.pkl and 1_Testing_dataset_Zeus_Alexa.csv file
+--for problem-2, use classifier_model_2.pkl and 1_Testing_dataset_Bashlite_Mirai.csv file
+--Change the output file name where the predicted values are captured.
+
+4) RandomForest.py (in the master branch): This deals with the problem-2 discussed above using Random Forest Classifiers. The code is used for following actions: 
+--To create the training model for 2_Training_Dataset_Bashlite_Mirai.csv. 
+--The dataset is split into training and testing subsets. 
+--The testing subset created is used to make the predictions on the basis of the training model created.
+--Furthermore, accuracy score, classification report and confusion matrix are generated. 
+--Pickle is used to save the training model into a pickle file: classifier_model_3.pkl.
+
+
