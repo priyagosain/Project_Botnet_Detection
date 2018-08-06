@@ -3,18 +3,31 @@
 ##Project Flow
 
 ##Problem Statements
+
 The project deals with 2 problem statements. 
+
 Problem-1: To distinguish between the botnet (illegitimate) and legitimate dataset. We have zeus and alexa records and hence this involves binary classification learning.
+
 Problem-2: To distinguish between the IoT's botnet devices. Here, 9 classes are to be predicted.
+
 Bashlite Doorbell - Class 1
+
 Mirai Doorbell - Class 2
+
 Bashlite Thermostat - Class 3
+
 Mirai Thermostat - Class 4
+
 Bashlite Baby Monitor - Class 5
+
 Mirai Baby Monitor - Class 6
+
 Bashlite Security Camera - Class 7
+
 Mirai Security Camera - Class 8
+
 Bashlite Webcam - Class 9 
+
 Hence, it involves multinomial classification learning.
 
 ##Datasets
