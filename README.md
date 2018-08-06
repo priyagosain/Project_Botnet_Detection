@@ -45,7 +45,7 @@ it is a binary classification problem.
 #After that the predictions were made and accuracy was calculated.
 #Then we created a Function to create a Pickle file that contains the Classifier Model which can be used at later stages to predict 
 any new set of samples.
-# Function  is created to make a decision tree graph using Graphviz for visualisation. There are two classes to be classified and 
+Function  is created to make a decision tree graph using Graphviz for visualisation. There are two classes to be classified and 
 hence the labels: Illegitimate and Legitimate. Feature set comprises of Duration, Total Packets, Total Bytes, Load, Rate.
 #Another Function is created to make a Pickle file that contains the Classifier Model which can be used at later stages to predict
 any new set of samples.
