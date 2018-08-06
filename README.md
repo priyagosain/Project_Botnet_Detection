@@ -29,23 +29,38 @@ Hence, it involves multinomial classification learning.
 ##Python codes
 1) Zeus_Alexa.py (in the master branch): This deals with the problem-1 discussed above. The code is used for following actions: 
 --To create the training model for 1_Training_Dataset_Zeus_Alexa.csv. 
+
 --The dataset is split into training and testing subsets. 
+
 --The testing subset created is used to make the predictions on the basis of the training model created.
+
 --Furthermore, accuracy score, classification report and confusion matrix are generated. 
+
 --Digraph for the decision tree model is created (Zeus_Alexa_Decision_Rules_Graph.pdf).
---ROC curve for the botnet class is generated too (ROC_curve.png is the output file)
+
+--ROC curve for the botnet class is generated too (ROC_curve.png is the output file).
+
 --Pickle is used to save the training model into a pickle file: classifier_model.pkl.
+
 --After this use LoadPickle.py.
+
 --PredictedValues_zeus.csv file would be generated for the provisioned dataset.
 
 2) Bashlite_Mirai.py (in the master branch): This deals with the problem-2 discussed above using Decision Trees. The code is used for following actions: 
 --To create the training model for 2_Training_Dataset_Bashlite_Mirai.csv. 
+
 --The dataset is split into training and testing subsets. 
+
 --The testing subset created is used to make the predictions on the basis of the training model created.
+
 --Furthermore, accuracy score, classification report and confusion matrix are generated. 
+
 --Digraph for the decision tree model is created (Bashlite_Mirai_Decision_Rules_Graph.pdf).
+
 --Pickle is used to save the training model into a pickle file: classifier_model_2.pkl.
+
 --After this use LoadPickle.py.
+
 --PredictedValues_mirai.csv file would be generated for the provisioned dataset.
 
 
